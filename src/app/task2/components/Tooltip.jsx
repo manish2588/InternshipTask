@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-export default function Tooltip({ children, content, direction = "top" }) {
+export default function Tooltip({ children,name, post,content, direction = "top" }) {
   const [show, setShow] = useState(false);
   //for defining position for content
   const position = {
-    top: "bottom-full mb-2 left-1/2 -translate-x-1/2 origin-bottom",
-    bottom: "top-full mt-2 left-1/2 -translate-x-1/2 origin-top",
-    left: "right-full mr-2 top-1/2 -translate-y-1/2 origin-right",
-    right: "left-full ml-2 top-1/2 -translate-y-1/2 origin-left",
+    top: "bottom-full -mb-2 left-1/2 -translate-x-1/2 origin-bottom",
+    bottom: "top-full -mt-2 left-1/2 -translate-x-1/2 origin-top",
+    left: "right-full -mr-2 top-1/2 -translate-y-1/2 origin-right",
+    right: "left-full -ml-2 top-1/2 -translate-y-1/2 origin-left",
   };
   //for defining arrow direction
   const arrow = {
@@ -29,10 +29,14 @@ export default function Tooltip({ children, content, direction = "top" }) {
       </div>
 
       {show && (
-        <div className={`absolute ${position[direction]} z-50 w-40`}>
+        <div className={`absolute ${position[direction]} z-50 w-64`}>
           <div className="animate-tooltip-open" data-direction={direction}>
-            <div className="bg-white text-gray-800 text-sm px-3 py-2 rounded-md shadow-lg relative">
-              {content}
+            <div className="bg-white text-gray-800  px-3 py-2 rounded-md shadow-lg relative">
+              <div className=" text-sm font-thin text-justify">
+                {content}
+              </div>
+              <p className="text-end font-semibold mt-2">{name}</p>
+              <p className="text-end text-base">{post}</p>
               <div className={`absolute w-0 h-0 ${arrow[direction]}`} />
             </div>
           </div>

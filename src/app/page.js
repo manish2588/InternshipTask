@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import SimpleBox from "./components/SimpleBox";
-import { FaUserGraduate } from "react-icons/fa6";
 import BelowBox from "./components/BelowBox";
 import HoverBox from "./components/HoverBox";
-
+import { FcBusinessman } from "react-icons/fc";
+import { FcBusinesswoman } from "react-icons/fc";
+import { FcManager } from "react-icons/fc";
 export default function Task1() {
   const simpleBoxesData = [
     {
@@ -13,7 +14,7 @@ export default function Task1() {
       subHeading: "You are not learning alone",
       paragraph:
         "Stuck or need feedback? SkillShikshya's community of members and learners has your back with live support. SkillShikshya's community of members and learners has your back with live support.",
-      Icon: <FaUserGraduate size={100} color="white" />,
+      Icon: <FcBusinessman size={200} color="white" />,
     },
     {
       bgColor: "bg-yellow-600/60",
@@ -21,7 +22,7 @@ export default function Task1() {
       subHeading: "Build Your Portfolio, Get Job Ready",
       paragraph:
         "SkillShikshya’s resources and hands-on projects help you create a portfolio that stands out to employers. Gain confidence and credibility with real results.",
-      Icon: <FaUserGraduate size={100} color="white" />,
+      Icon: <FcBusinesswoman size={200} color="white" />,
     },
   ];
   const aboveBoxesData = [
@@ -31,7 +32,7 @@ export default function Task1() {
       subHeading: "Step into better learning path",
       paragraph:
         "Overwhelmed by to many Learning Options. Overwhelmed by to many Learning Options. SkillShikshya's community action is better of members and learners has your back with live support.",
-      Icon: <FaUserGraduate size={100} color="white" />,
+      Icon: <FcManager size={200} color="white" />,
     },
     {
       bgColor: "bg-cyan-600",
@@ -39,7 +40,7 @@ export default function Task1() {
       subHeading: "Practice skills, real projects",
       paragraph:
         "Theory is great but action is better.Theory is great but action is better action is better At SkillShikshya’s you learn by coding. Gain confidence and credibility with real results.",
-      Icon: <FaUserGraduate size={100} color="white" />,
+      Icon: <FcBusinessman size={200} color="white" />,
     },
   ];
 
@@ -47,13 +48,12 @@ export default function Task1() {
     {
       bgColor: "bg-red-400",
       heading: " Clarity Unlocked ",
-      Icon: <FaUserGraduate size={120} color="white" />,
+      Icon: <FcBusinessman size={200} color="white" />,
     },
     {
       bgColor: "bg-cyan-600",
       heading: " Focus faces, Learning mode ON",
-
-      Icon: <FaUserGraduate size={120} color="white" />,
+      Icon: <FcBusinesswoman size={200} color="white" />,
     },
   ];
 

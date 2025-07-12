@@ -11,10 +11,10 @@ export default function BelowBox({ data, reverse }) {
       }`}
     >
       {/* Icon section */}
-      <div className="w-[35%] flex px-18 ">{Icon}</div>
+      <div className="w-[35%] h-full flex px-10 ">{Icon}</div>
 
       {/* Text section */}
-      <div className="w-[65%] flex flex-col items-center space-y-4 px-12 text-white">
+      <div className="w-[65%] h-full flex flex-col items-center space-y-4 px-12 text-white">
         <h3 className="text-2xl font-medium text-center">{heading}</h3>
       </div>
     </div>

@@ -7,7 +7,8 @@ import { IoTrophy } from "react-icons/io5";
 import { BsEmojiHeartEyesFill } from "react-icons/bs";
 import Tooltip from "./components/Tooltip";
 import MessageBox from "./components/MessageBox";
-
+import { FcBusinessman } from "react-icons/fc";
+import { FcBusinesswoman } from "react-icons/fc";
 function Task2() {
   const [hoverBox, setHoverBox] = useState(false);
   const [hoverIcon, setHoverIcon] = useState(false);
@@ -18,7 +19,7 @@ function Task2() {
     const interval = setInterval(() => {
       setShowMessage(true);
       setTimeout(() => setShowMessage(false), 2000);
-    }, 6000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -53,7 +54,7 @@ function Task2() {
 
         {/* TOP LEFT This contains tooltip which shows on hover */}
         <div
-          className={`absolute transition-all duration-500 ${
+          className={`absolute transition-all duration-500  ${
             hoverBox
               ? "animate-floatUp top-[8%] left-[30%]"
               : "top-[24%] left-[38%]"
@@ -61,11 +62,13 @@ function Task2() {
           style={{ width: 60, height: 60 }}
         >
           <Tooltip
-            content="This is so amazing.This is amazing content.This is amazing content.This is amazing content.This is amazing content.This is amazing content "
+           name={'Manish K.C.'}
+           post={'Frontend Developer'}
+           content=" Hello my name is Manish K.C. I am amazed by the course structure. This is amazing content. Content are always amazing this is a tooltip wow. Hello I am a frontend Developer. "
             direction="bottom"
           >
-            <FaUserCircle
-              size={60}
+            <FcBusinessman
+              size={70}
               className="text-gray-800"
               onMouseEnter={() => setHoverIcon(true)}
               onMouseLeave={() => setHoverIcon(false)}
@@ -73,7 +76,7 @@ function Task2() {
           </Tooltip>
 
           {showMessage && !hoverIcon && (
-            <div className="absolute left-full ml-2 w-34 top-1/2 -translate-y-1/2 z-50">
+            <div className="absolute left-full -ml-2 w-34 top-1/2 -translate-y-1/2 z-50">
               <MessageBox message="Amazing ⭐⭐⭐" />
             </div>
           )}
@@ -154,11 +157,11 @@ function Task2() {
               />
             }
           >
-            <FaUserCircle size={60} className="text-gray-800" />
+            <FcBusinesswoman size={70} className="text-gray-800" />
           </Tooltip>
 
           {showMessage && !hoverIcon && (
-            <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 z-50">
+            <div className="absolute left-full -ml-2 top-1/2 -translate-y-1/2 z-50">
               <MessageBox message="⭐⭐⭐" />
             </div>
           )}
