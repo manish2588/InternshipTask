@@ -15,7 +15,7 @@ export default function BelowBox({ data, reverse }) {
 
       {/* Text section */}
       <div className="w-[65%] h-full flex flex-col items-center space-y-4 px-12 text-white">
-        <h3 className="text-2xl font-medium text-center">{heading}</h3>
+        <h3 className="text-3xl font-bold text-center">{heading}</h3>
       </div>
     </div>
   );
