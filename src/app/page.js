@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import SimpleBox from "./task1components/SimpleBox";
+import SimpleBox from "./components/SimpleBox";
 import { FaUserGraduate } from "react-icons/fa6";
-import BelowBox from "./task1components/BelowBox";
-import HoverBox from "./task1components/HoverBox";
+import BelowBox from "./components/BelowBox";
+import HoverBox from "./components/HoverBox";
 
-export default function page() {
+export default function Task1() {
   const simpleBoxesData = [
     {
       bgColor: "bg-purple-600",
@@ -59,16 +59,15 @@ export default function page() {
 
   return (
     <div className="min-h-screen max-w-[100vw] py-4 space-y-4">
-      <h1 className="text-4xl font-medium text-center">Internship Tasks</h1>
       <h3 className="px-28 text-2xl font-medium font-gray-800 ">
         Your SkillShikshya Journey
       </h3>
       <h3 className="px-28 text-2xl font-medium font-gray-800 ">
-        <span className="font-bold text-3xl text-teal-600">Stop</span>
+        <span className="font-bold text-3xl text-teal-600">Stop </span>
         <span className="font-bold text-3xl text-gray-950">In. </span>
-        <span className="font-bold text-3xl text-teal-600">Skill</span>
+        <span className="font-bold text-3xl text-teal-600">Skill </span>
         <span className="font-bold text-3xl text-gray-950">Up .</span>
-        <span className="font-bold text-3xl text-teal-600">Stand</span>
+        <span className="font-bold text-3xl text-teal-600">Stand </span>
         <span className="font-bold text-3xl text-gray-950">Out. </span>
       </h3>
       <div className="grid grid-cols-2 gap-12  px-28">

@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
-
 export default function MessageBox({
   message ,
   direction = "right",
 }) {
-  const arrowClass = {
+  const arrowClass = {  //for defining arrow direction
     right:
       "left-0 top-1/2 -translate-y-1/2 -translate-x-full border-r-white border-y-transparent border-y-8 border-r-8",
     left: "right-0 top-1/2 -translate-y-1/2 translate-x-full border-l-black/80 border-y-transparent border-y-8 border-l-8",

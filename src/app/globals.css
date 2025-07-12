@@ -25,4 +25,102 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* CSS for float animation */
+ @keyframes floatUp {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+        @keyframes floatDown {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(15px);
+          }
+        }
+        .animate-floatUp {
+          animation: floatUp 3s ease-in-out infinite;
+        }
+        .animate-floatDown {
+          animation: floatDown 3s ease-in-out infinite;
+        }
+
+/* css for tooltip animation */
+  @keyframes tooltip-open-top {
+          0% {
+            opacity: 0;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleY(0.1);
+            transform-origin: bottom;
+          }
+          100% {
+            opacity: 1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleY(1);
+          }
+        }
+
+        @keyframes tooltip-open-bottom {
+          0% {
+            opacity: 0;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleY(0.1);
+            transform-origin: top;
+          }
+          100% {
+            opacity: 1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleY(1);
+          }
+        }
+
+        @keyframes tooltip-open-left {
+          0% {
+            opacity: 0;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleX(0.1);
+            transform-origin: right;
+          }
+          100% {
+            opacity: 1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleX(1);
+          }
+        }
+
+        @keyframes tooltip-open-right {
+          0% {
+            opacity: 0;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleX(0.1);
+            transform-origin: left;
+          }
+          100% {
+            opacity: 1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+              scaleX(1);
+          }
+        }
+
+        .animate-tooltip-open[data-direction="top"] {
+          animation: tooltip-open-top 1s ease-out forwards;
+        }
+
+        .animate-tooltip-open[data-direction="bottom"] {
+          animation: tooltip-open-bottom 1s ease-out forwards;
+        }
+
+        .animate-tooltip-open[data-direction="left"] {
+          animation: tooltip-open-left 1s ease-out forwards;
+        }
+
+        .animate-tooltip-open[data-direction="right"] {
+          animation: tooltip-open-right 1s ease-out forwards;
+        }
 

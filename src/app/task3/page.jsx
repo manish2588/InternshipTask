@@ -6,14 +6,14 @@ const COLS = 25;
 const BLUE_BOX_COUNT = 9;
 const FADE_DURATION = 500;
 
-export default function FullScreenGrid() {
+export default function Task3() {
   const [blueBoxes, setBlueBoxes] = useState([]);
   const [isFading, setIsFading] = useState(false);
 
   const generateUniqueRowColBoxes = () => {
     const availablePositions = [];
 
-    // Create all grid positions
+    // Create all  positions
     for (let r = 0; r < ROWS; r++) {
       for (let c = 0; c < COLS; c++) {
         availablePositions.push({ row: r, col: c });
@@ -24,8 +24,8 @@ export default function FullScreenGrid() {
     const shuffled = availablePositions.sort(() => Math.random() - 0.5);
 
     const selected = [];
-    const usedRows = new Set();
-    const usedCols = new Set();
+    const usedRows = new Set();   
+    const usedCols = new Set();   
 
     for (const { row, col } of shuffled) {
       if (!usedRows.has(row) && !usedCols.has(col)) {
@@ -36,7 +36,7 @@ export default function FullScreenGrid() {
       }
     }
 
-    return selected;
+    return selected;  //this return 9 unique position 
   };
 
   const updateBlueBoxes = () => {
@@ -55,7 +55,7 @@ export default function FullScreenGrid() {
 
   return (
     <div
-      className="grid w-screen h-screen"
+      className="grid max-w-screen h-[calc(100vh-48px)] "
       style={{
         gridTemplateColumns: `repeat(${COLS}, 1fr)`,
         gridTemplateRows: `repeat(${ROWS}, 1fr)`,
@@ -66,7 +66,7 @@ export default function FullScreenGrid() {
         const row = Math.floor(i / COLS);
         const col = i % COLS;
         const key = `${row}-${col}`;
-        const isBlue = blueBoxes.includes(key);
+        const isBlue = blueBoxes.includes(key);  //check which position is included in random generated 9 positions
 
         return (
           <div

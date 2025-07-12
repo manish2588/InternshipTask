@@ -9,30 +9,31 @@ import Tooltip from "./components/Tooltip";
 import MessageBox from "./components/MessageBox";
 
 function Task2() {
-  const [hoverBlue, setHoverBlue] = useState(false);
+  const [hoverBox, setHoverBox] = useState(false);
   const [hoverIcon, setHoverIcon] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
-
+  
+  {/* This display message for 2 second on every 6 sec  */}
   useEffect(() => {
     const interval = setInterval(() => {
       setShowMessage(true);
-      setTimeout(() => setShowMessage(false), 1500);
-    }, 3000);
+      setTimeout(() => setShowMessage(false), 2000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="max-w-screen h-screen flex items-center justify-center">
-      {/* Blue Div */}
+    <div className="max-w-screen h-screen bg-gray-100 flex items-center justify-center">
+      {/* Hover Div This trigger the icons position changing */}
       <div
-        className="w-[70%] h-[75%] flex items-center rounded-2xl justify-center relative bg-blue-100"
-        onMouseEnter={() => setHoverBlue(true)}
+        className="w-[70%] h-[75%] flex items-center rounded-2xl justify-center relative "
+        onMouseEnter={() => setHoverBox(true)}
         onMouseLeave={() => {
-          setHoverBlue(false);
+          setHoverBox(false);
           setHoverIcon(false);
         }}
       >
-        {/* Pink Box */}
+        {/* Content Box */}
         <div className="w-[35%] h-[25%] space-y-2 relative z-0">
           <p className="font-medium text-xl text-center text-gray-800">
             Here How They Level Up Their Game
@@ -50,10 +51,10 @@ function Task2() {
 
         {/* ICONS */}
 
-        {/* TOP LEFT — floatUp */}
+        {/* TOP LEFT This contains tooltip which shows on hover */}
         <div
           className={`absolute transition-all duration-500 ${
-            hoverBlue
+            hoverBox
               ? "animate-floatUp top-[8%] left-[30%]"
               : "top-[24%] left-[38%]"
           }`}
@@ -78,62 +79,62 @@ function Task2() {
           )}
         </div>
 
-        {/* TOP CENTER SMALL — no float */}
+        {/* TOP CENTER*/}
         <LuThumbsUp
           className={`text-yellow-400 absolute transition-all duration-500 ${
-            hoverBlue ? "top-[15%] right-[48%]" : "top-[24%] right-[48%]"
+            hoverBox ? "top-[15%] right-[48%]" : "top-[24%] right-[48%]"
           }`}
           size={40}
         />
 
-        {/* TOP RIGHT — floatDown */}
+        {/* TOP RIGHT */}
         <FaUserCircle
           className={`text-gray-800 absolute transition-all duration-500 ${
-            hoverBlue
+            hoverBox
               ? "animate-floatDown top-[8%] right-[30%]"
               : "top-[24%] right-[38%]"
           }`}
           size={60}
         />
 
-        {/* LEFT CENTER — floatUp */}
+        {/* LEFT CENTER */}
         <FaUserCircle
           className={`text-gray-800 absolute top-1/2 -translate-y-1/2 transition-all duration-500 ${
-            hoverBlue ? "animate-floatUp left-[10%]" : "left-[26%]"
+            hoverBox ? "animate-floatUp left-[10%]" : "left-[26%]"
           }`}
           size={60}
         />
 
-        {/* RIGHT CENTER — floatDown */}
+        {/* RIGHT CENTER */}
         <FaUserCircle
           className={`text-gray-800 absolute top-1/2 -translate-y-1/2 transition-all duration-500 ${
-            hoverBlue ? "animate-floatDown right-[10%]" : "right-[26%]"
+            hoverBox ? "animate-floatDown right-[10%]" : "right-[26%]"
           }`}
           size={60}
         />
 
-        {/* BOTTOM LEFT — floatUp */}
+        {/* BOTTOM LEFT */}
         <FaUserCircle
           className={`text-gray-800 absolute transition-all duration-500 ${
-            hoverBlue
+            hoverBox
               ? "animate-floatUp bottom-[8%] left-[30%]"
               : "bottom-[24%] left-[38%]"
           }`}
           size={60}
         />
 
-        {/* BOTTOM CENTER — no float */}
+        {/* BOTTOM CENTER*/}
         <IoTrophy
           className={`text-yellow-400 absolute transition-all duration-500 ${
-            hoverBlue ? "bottom-[1%] left-[48%]" : "bottom-[24%] left-[48%]"
+            hoverBox ? "bottom-[1%] left-[48%]" : "bottom-[24%] left-[48%]"
           }`}
           size={60}
         />
 
-        {/* BOTTOM RIGHT — floatDown */}
+        {/* BOTTOM RIGHT This contains tooltip which shows on hover */}
         <div
           className={`absolute transition-all duration-500 ${
-            hoverBlue
+            hoverBox
               ? "animate-floatDown bottom-[8%] right-[30%]"
               : "bottom-[24%] right-[38%]"
           }`}
@@ -163,121 +164,22 @@ function Task2() {
           )}
         </div>
 
-        {/* EXTRA BOTTOM LEFT — no float */}
+        {/* EXTRA BOTTOM LEFT */}
         <BsEmojiHeartEyesFill
           className={`text-yellow-400 absolute transition-all duration-500 ${
-            hoverBlue ? "bottom-[26%] left-[20%]" : "bottom-[30%] left-[30%]"
+            hoverBox ? "bottom-[26%] left-[20%]" : "bottom-[30%] left-[30%]"
           }`}
           size={50}
         />
 
-        {/* EXTRA BOTTOM RIGHT — no float */}
+        {/* EXTRA BOTTOM RIGHT*/}
         <BsEmojiHeartEyesFill
           className={`text-yellow-400 absolute transition-all duration-500 ${
-            hoverBlue ? "bottom-[26%] right-[20%]" : "bottom-[30%] right-[30%]"
+            hoverBox ? "bottom-[26%] right-[20%]" : "bottom-[30%] right-[30%]"
           }`}
           size={50}
         />
       </div>
-
-      {/* Add these to your global CSS or Tailwind config */}
-      <style jsx global>{`
-        @keyframes floatUp {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-15px);
-          }
-        }
-        @keyframes floatDown {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(15px);
-          }
-        }
-        .animate-floatUp {
-          animation: floatUp 3s ease-in-out infinite;
-        }
-        .animate-floatDown {
-          animation: floatDown 3s ease-in-out infinite;
-        }
-        @keyframes tooltip-open-top {
-          0% {
-            opacity: 0;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleY(0.1);
-            transform-origin: bottom;
-          }
-          100% {
-            opacity: 1;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleY(1);
-          }
-        }
-
-        @keyframes tooltip-open-bottom {
-          0% {
-            opacity: 0;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleY(0.1);
-            transform-origin: top;
-          }
-          100% {
-            opacity: 1;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleY(1);
-          }
-        }
-
-        @keyframes tooltip-open-left {
-          0% {
-            opacity: 0;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleX(0.1);
-            transform-origin: right;
-          }
-          100% {
-            opacity: 1;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleX(1);
-          }
-        }
-
-        @keyframes tooltip-open-right {
-          0% {
-            opacity: 0;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleX(0.1);
-            transform-origin: left;
-          }
-          100% {
-            opacity: 1;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-              scaleX(1);
-          }
-        }
-
-        .animate-tooltip-open[data-direction="top"] {
-          animation: tooltip-open-top 1s ease-out forwards;
-        }
-
-        .animate-tooltip-open[data-direction="bottom"] {
-          animation: tooltip-open-bottom 1s ease-out forwards;
-        }
-
-        .animate-tooltip-open[data-direction="left"] {
-          animation: tooltip-open-left 1s ease-out forwards;
-        }
-
-        .animate-tooltip-open[data-direction="right"] {
-          animation: tooltip-open-right 1s ease-out forwards;
-        }
-      `}</style>
     </div>
   );
 }

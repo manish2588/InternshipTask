@@ -1,16 +1,15 @@
 "use client";
 import React, { useState } from "react";
-
 export default function Tooltip({ children, content, direction = "top" }) {
   const [show, setShow] = useState(false);
-
+  //for defining position for content
   const position = {
     top: "bottom-full mb-2 left-1/2 -translate-x-1/2 origin-bottom",
     bottom: "top-full mt-2 left-1/2 -translate-x-1/2 origin-top",
     left: "right-full mr-2 top-1/2 -translate-y-1/2 origin-right",
     right: "left-full ml-2 top-1/2 -translate-y-1/2 origin-left",
   };
-
+  //for defining arrow direction
   const arrow = {
     top: "top-full left-1/2 -translate-x-1/2 border-t-white border-x-transparent border-x-8 border-t-8",
     bottom:
